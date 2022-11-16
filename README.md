@@ -16,6 +16,8 @@ one to one chat with their friends.
 ```
 pip install django
 pip install django-rest-framework
+pip install django-widget-tweaks
+
 ```
 
 ## How to use?
