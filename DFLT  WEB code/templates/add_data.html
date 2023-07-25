@@ -1,105 +1,110 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-   <body>
-   
-<style>
-div {
-  background-color: #BAA1C2;
-  
-  width:300px;
-  border: 80px solid #BAA1C2;
-  padding: 0px;
-  margin: 0px;
-}
-.nav {
-  background-color: darkgrey; 
-  list-style-type: none;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-label {
-  text-align: center;
-}
-input {
-  text-align: center;
-}
-body{
-	background-color: #E3E8ED;
-}
-.btn {
-BORDER: 1px solid;  COLOR: black; height: 30px; width: 30px;
-WIDTH: 33%;
-display: inline-block;
-}
+    
+    <title>Input Your Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E3E8ED;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-.button {
-  border: 3px solid;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  width: 33%;
-}
-h1{
-	text-align: center;
-}
-form{
-	text-align: center;
-}
-table{
-	width: 100%;
-	height: 100%;
-	
-}
-tr{
-	width: 100%;
-	height: 50%;
-	
-}
-td{
-	width: 33%;
-	text-align: center;
-	
-}
-h3{
-	text-align: center;
-	
-}
-</style>
-      <h1>drop shock result </h1>
-      <hr/>
-      
-     
-      
-      <form action = "{{ request.path }}" method = "post">
-         <label for = "name">name</label><br>
-         <input type = "text" name = "name" placeholder = "name" required="required"/><br>
-         <label for = "city">email</label><br>
-         <input type = "text" name = "email" placeholder = "email" required="required"/><br>
-         <label for = "neighbor">password</label><br>
-         <input type = "text" name = "password" placeholder = "password" /><br>
+        .container {
+            background-color: #a1bac2;
+            width: 3800px;
+            padding: 1900px;
+            border-radius: 700px;
+        }
+
+        .header {
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
         
-         <input type="submit" value="Submit" class="btn btn-info">
-      </form>
 
-   
+        .header img {
+            position: absolute; /* 设置Logo图像为绝对定位 */
+            top: 1px; /* 距离顶部的间距 */
+            left: 50px; /* 距离左侧的间距 */
+            width: 300px; /* 设置图像宽度 */
+            height: 300px; /* 设置图像高度 */
+            object-fit: contain; /* 图像缩放保持比例，保证完整显示 */
+        }
 
-      <p>Already have an account? <a href="/login">Log In</a></p>
-      
-   </body>
+        
+        .form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #214747;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #19381a;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+  <body>
+    <!-- 上传文件和输入x,y的表单 -->
+    <form action="/" method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="text" name="x" placeholder="Enter x value">
+      <input type="text" name="y" placeholder="Enter y value">
+      <input type="submit" value="Upload">
+    </form>
+    <!-- 插入图形的div元素 -->
+    {{ div|safe }}
+    <!-- 插入图形的脚本 -->
+    {{ script|safe }}
+  </body>
 </html>
